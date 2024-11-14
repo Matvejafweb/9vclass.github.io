@@ -2,8 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мой класс - 9"В"</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
@@ -29,25 +28,6 @@
             </ul>
         </nav>
     </header>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const burgerMenu = document.getElementById('burger-menu');
-            const navList = document.getElementById('nav-list');
-            
-            // Переключение активности меню при клике на бургер
-            burgerMenu.addEventListener('click', function() {
-                navList.classList.toggle('active');  // Показываем/скрываем меню
-            });
-            
-            // Закрытие меню, если кликнули вне меню
-            document.addEventListener('click', function(event) {
-                if (!burgerMenu.contains(event.target) && !navList.contains(event.target)) {
-                    navList.classList.remove('active');  // Скрываем меню, если кликнули вне
-                }
-            });
-        });
-        
-    </script>
     
 
     <div class="diagonal-divider">
@@ -72,7 +52,7 @@
         <p>&copy; 2024 9"В" класс. Все права защищены. Создал Наконечный Матвей / для урока информатики</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Ждем полной загрузки контента

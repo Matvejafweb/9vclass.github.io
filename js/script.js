@@ -26,4 +26,27 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
         console.error("Некоторые элементы модального окна не найдены.");
     }
+
+    const burgerMenu = document.getElementById('burger-menu');
+    const navList = document.getElementById('nav-list');
+
+    // При клике на бургер-меню показываем или скрываем список
+    burgerMenu.addEventListener('click', function() {
+        navList.classList.toggle('active');
+    });
+
+    // Закрыть меню, если кликнуть вне его
+    window.addEventListener('click', function(event) {
+        if (!navList.contains(event.target) && !burgerMenu.contains(event.target)) {
+            navList.classList.remove('active');
+        }
+    });
 });
+
+document.addEventListener('touchmove', function(event) {
+    event = event.originalEvent || event;
+
+    if(event.scale > 1) {
+        event.preventDefault();
+    }
+}, false);

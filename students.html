@@ -2,19 +2,24 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ученики 9"В" класса</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- Подключение Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1 class="header-h1">Ученики 9"В" класса</h1>
+        <h1 class="header-h1">Добро пожаловать на сайт 9"В" класса!</h1>
         <nav>
-            <ul>
-                <li><a class="nav-link" href="index.html">Главная</a></li>
+            <div class="burger-menu" id="burger-menu">
+                <i class="fas fa-bars"></i> <!-- Иконка бургера -->
+            </div>
+            <ul id="nav-list" class="nav-list">
                 <li><a class="nav-link" href="about.html">О классе</a></li>
+                <li><a class="nav-link" href="students.html">Ученики</a></li>
                 <li><a class="nav-link" href="gallery.html">Галерея</a></li>
             </ul>
         </nav>
@@ -170,6 +175,6 @@
         <p>&copy; 2024 9"В" класс. Все права защищены. Создал Наконечный Матвей / для урока информатики</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
 </body>
 </html>

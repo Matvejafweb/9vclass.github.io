@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+    
+        .gallery-item {
+            width: 100%;
+            height: 200px; /* Фиксированная высота для всех карточек */
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+    
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+    
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Изображения заполняют карточки и обрезаются по необходимости */
+        }
+    
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+    
+        .gallery-item {
+            width: 100%;
+            height: 200px; /* Фиксированная высота для всех карточек */
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+    
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+    
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Изображения заполняют карточки и обрезаются по необходимости */
+        }
+    
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+    
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 75%; /* Соотношение сторон 4:3 для карточки */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+    
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+    
+        .gallery-item img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+        }
+    
+        /* Модальное окно для просмотра изображения */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+    
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+                /* Адаптация для мобильных устройств */
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 480px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="header-h1">Добро пожаловать на сайт 9"В" класса!</h1>
+        <nav>
+            <div class="burger-menu" id="burger-menu">
+                <i class="fas fa-bars"></i> <!-- Иконка бургера -->
+            </div>
+            <ul id="nav-list" class="nav-list">
+                <li><a class="nav-link" href="index.html">Главная</a></li>
+                <li><a class="nav-link" href="students.html">Ученики</a></li>
+                <li><a class="nav-link" href="about.html">О классе</a></li>
+            </ul>
+        </nav>
+    </header>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const burgerMenu = document.getElementById('burger-menu');
+            const navList = document.getElementById('nav-list');
+            
+            // Переключение активности меню при клике на бургер
+            burgerMenu.addEventListener('click', function() {
+                navList.classList.toggle('active');  // Показываем/скрываем меню
+            });
+            
+            // Закрытие меню, если кликнули вне меню
+            document.addEventListener('click', function(event) {
+                if (!burgerMenu.contains(event.target) && !navList.contains(event.target)) {
+                    navList.classList.remove('active');  // Скрываем меню, если кликнули вне
+                }
+            });
+        });
+        
+    </script>
+
+<!-- Галерея -->
+<section class="gallery">
+    <div class="gallery-item">
+        <img src="images/gallery/1.jpg" alt="Фото 1" onclick="openModal(this)">
+    </div>
+    <div class="gallery-item">
+        <img src="images/gallery/2.jpg" alt="Фото 2" onclick="openModal(this)">
+    </div>
+    <div class="gallery-item">
+        <img src="images/gallery/3.jpg" alt="Фото 3" onclick="openModal(this)">
+    </div>
+    <div class="gallery-item">
+        <img src="images/gallery/4.jpg" alt="Фото 4" onclick="openModal(this)">
+    </div>
+    <div class="gallery-item">
+        <img src="images/gallery/5.jpg" alt="Фото 5" onclick="openModal(this)">
+    </div>
+    <div class="gallery-item">
+        <img src="images/gallery/6.jpg" alt="Фото 6" onclick="openModal(this)">
+    </div>
+    <div class="gallery-item">
+        <img src="images/gallery/7.jpg" alt="Фото 7" onclick="openModal(this)">
+    </div>
+    <div class="gallery-item">
+        <img src="images/gallery/8.jpg" alt="Фото 8" onclick="openModal(this)">
+    </div>
+    <div class="gallery-item">
+        <img src="images/gallery/9.jpg" alt="Фото 9" onclick="openModal(this)">
+    </div>
+    <div class="gallery-item">
+        <img src="images/gallery/10.jpg" alt="Фото 10" onclick="openModal(this)">
+    </div>
+    <div class="gallery-item">
+        <img src="images/gallery/11.jpg" alt="Фото 11" onclick="openModal(this)">
+    </div>
+    <div class="gallery-item">
+        <img src="images/gallery/12.jpg" alt="Фото 12" onclick="openModal(this)">
+    </div>
+    <div class="gallery-item">
+        <img src="images/gallery/13.jpg" alt="Фото 13" onclick="openModal(this)">
+    </div>
+</section>
+<!-- Модальное окно для увеличения изображения -->
+<div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+</div>
+
+<footer>
+    <p>&copy; 2024 9"В" класс. Все права защищены. Создал Наконечный Матвей / для урока информатики</p>
+</footer>
+
+<script>
+    // Открыть модальное окно
+    function openModal(img) {
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("modalImage");
+        modal.style.display = "block";
+        modalImg.src = img.src;
+    }
+
+    // Закрыть модальное окно
+    function closeModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+    }
+</script>
+
+</body>
+</html>

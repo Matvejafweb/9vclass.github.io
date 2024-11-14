@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О классе 9"В"</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1 class="header-h1">Добро пожаловать на сайт 9"В" класса!</h1>
+        <nav>
+            <div class="burger-menu" id="burger-menu">
+                <i class="fas fa-bars"></i> <!-- Иконка бургера -->
+            </div>
+            <ul id="nav-list" class="nav-list">
+                <li><a class="nav-link" href="index.html">Главная</a></li>
+                <li><a class="nav-link" href="students.html">Ученики</a></li>
+                <li><a class="nav-link" href="gallery.html">Галерея</a></li>
+            </ul>
+        </nav>
+    </header>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const burgerMenu = document.getElementById('burger-menu');
+            const navList = document.getElementById('nav-list');
+            
+            // Переключение активности меню при клике на бургер
+            burgerMenu.addEventListener('click', function() {
+                navList.classList.toggle('active');  // Показываем/скрываем меню
+            });
+            
+            // Закрытие меню, если кликнули вне меню
+            document.addEventListener('click', function(event) {
+                if (!burgerMenu.contains(event.target) && !navList.contains(event.target)) {
+                    navList.classList.remove('active');  // Скрываем меню, если кликнули вне
+                }
+            });
+        });
+        
+    </script>
+
+    <!-- Краткое описание класса -->
+    <section class="class-description">
+        <h2>Наш класс</h2>
+        <p>Мы — 9"В" класс, дружная и активная группа учеников. Мы любим заниматься учебой, спортом и участвовать в школьных мероприятиях. 
+            <br>Каждый из нас уникален и имеет свои увлечения и таланты, которые делают наш класс неповторимым.</p>
+        <img src="images/class_photo.jpg" alt="Совместная фотография 9'В' класса" class="class-photo" id="class-photo">
+    </section>
+
+    <section class="teacher-slider">
+        <h2 class="teachers-h1">Наши учителя</h2>
+        <div class="teacher-slider-container">
+            <div class="teacher-cards">
+                <!-- Карточка 7 -->
+                    <div class="teacher-card">
+                        <img src="images/teacher7.jpg" alt="Крайнова Ольга Александровна">
+                        <h3>Крайнова Ольга Александровна</h3>
+                        <p>Классный руководитель | Учитель английского</p>
+                    </div>
+                <!-- Карточка 1 -->
+                <div class="teacher-card">
+                    <img src="images/teacher1.jpg" alt="Васина Наталья Николаевна">
+                    <h3>Васина Наталья Николаевна</h3>
+                    <p>Учитель биологии</p>
+                    <p>Почетный работник общего образования РФ</p>
+                </div>
+    
+                <!-- Карточка 2 -->
+                <div class="teacher-card">
+                    <img src="images/teacher2.jpg" alt="Мищенко Наталья Васильевна">
+                    <h3>Мищенко Наталья Васильевна</h3>
+                    <p>Учитель информатики</p>
+                    <p>Почетный работник общего образования РФ</p>
+                </div>
+    
+                <!-- Карточка 3 -->
+                <div class="teacher-card">
+                    <img src="images/teacher3.jpg" alt="Родионова Светлана Владимировна">
+                    <h3>Родионова Светлана Владимировна</h3>
+                    <p>Учитель математики</p>
+                    <p>Почетный работник общего образования РФ</p>
+                </div>
+    
+                <!-- Карточка 4 -->
+                <div class="teacher-card">
+                    <img src="images/teacher4.jpg" alt="Толмачева Светлана Владимировна">
+                    <h3>Толмачева Светлана Владимировна</h3>
+                    <p>Заместитель директора по УР</p>
+                    <p>Почетный работник общего образования РФ</p>
+                </div>
+    
+                <!-- Карточка 5 -->
+                <div class="teacher-card">
+                    <img src="images/teacher5.jpg" alt="Бирюкова Екатерина Николаевна">
+                    <h3>Бирюкова Екатерина Николаевна</h3>
+                    <p>Учитель технологии</p>
+                </div>
+    
+                <!-- Карточка 6 -->
+                <div class="teacher-card">
+                    <img src="images/teacher6.jpg" alt="Гриценко Станислав Дмитриевич">
+                    <h3>Гриценко Станислав Дмитриевич</h3>
+                    <p>Учитель химии</p>
+                </div>
+    
+                <!-- Карточка 8 -->
+                <div class="teacher-card">
+                    <img src="images/teacher8.jpg" alt="Ларионов Сергей Петрович">
+                    <h3>Ларионов Сергей Петрович</h3>
+                    <p>Учитель технологии</p>
+                </div>
+    
+                <!-- Карточка 9 -->
+                <div class="teacher-card">
+                    <img src="images/teacher9.jpg" alt="Миронова Татьяна Анатольевна">
+                    <h3>Миронова Татьяна Анатольевна</h3>
+                    <p>Учитель русского языка</p>
+                </div>
+    
+                <!-- Карточка 10 -->
+                <div class="teacher-card">
+                    <img src="images/teacher10.jpg" alt="Одоевская Василиса Владимировна">
+                    <h3>Одоевская Василиса Владимировна</h3>
+                    <p>Педагог дополнительного образования</p>
+                </div>
+    
+                <!-- Карточка 11 -->
+                <div class="teacher-card">
+                    <img src="images/teacher11.jpg" alt="Попова Екатерина Евгеньевна">
+                    <h3>Попова Екатерина Евгеньевна</h3>
+                    <p>Учитель истории, социальный педагог</p>
+                </div>
+    
+                <!-- Карточка 12 -->
+                <div class="teacher-card">
+                    <img src="images/teacher12.jpg" alt="Сафонова Татьяна Евгеньевна">
+                    <h3>Сафонова Татьяна Евгеньевна</h3>
+                    <p>Учитель географии</p>
+                </div>
+    
+                <!-- Карточка 13 -->
+                <div class="teacher-card">
+                    <img src="images/teacher13.jpg" alt="Севостьянова Елена Александровна">
+                    <h3>Севостьянова Елена Александровна</h3>
+                    <p>Учитель немецкого языка</p>
+                </div>
+    
+                <!-- Карточка 14 -->
+                <div class="teacher-card">
+                    <img src="images/teacher14.jpg" alt="Храпов Олег Евгеньевич">
+                    <h3>Храпов Олег Евгеньевич</h3>
+                    <p>Учитель физической культуры</p>
+                </div>
+    
+                <!-- Карточка 15 -->
+                <div class="teacher-card">
+                    <img src="images/teacher15.jpg" alt="Карибов Седретдин Нуриевич">
+                    <h3>Карибов Седретдин Нуриевич</h3>
+                    <p>Учитель физики</p>
+                </div>
+    
+                <!-- Карточка 16 -->
+                <div class="teacher-card">
+                    <img src="images/teacher16.jpg" alt="Павлова Елизавета Владимировна">
+                    <h3>Павлова Елизавета Владимировна</h3>
+                    <p>Учитель физики</p>
+                </div>
+    
+                <!-- Карточка 17 -->
+                <div class="teacher-card">
+                    <img src="images/teacher17.jpg" alt="Кузнецов Захар Валерьевич">
+                    <h3>Кузнецов Захар Валерьевич</h3>
+                    <p>Преподаватель-организатор ОБЖ</p>
+                </div>
+            </div>
+        </div>
+        <!-- Кнопки для переключения слайдов -->
+        <button class="slider-btn prev-btn">&#10094;</button>
+        <button class="slider-btn next-btn">&#10095;</button>
+    </section>
+    
+    <!-- Модальное окно для увеличенной фотографии -->
+    <div id="photo-modal" class="modal">
+        <span class="close" id="close-modal">&times;</span>
+        <img class="modal-content" id="expanded-photo">
+    </div>
+
+    <footer>
+        <p>&copy; 2024 9"В" класс. Все права защищены. Создал Наконечный Матвей / для урока информатики</p>
+    </footer>
+
+    <script src="js/slider.js"></script>
+    <script src="js/script.js" defer></script>
+</body>
+</html>

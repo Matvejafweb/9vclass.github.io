@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой класс - 9"В"</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+<body>
+    <div id="loading-spinner">
+        <div class="loading"></div>
+    </div>
+
+    <header>
+        <h1 class="header-h1">Добро пожаловать на сайт 9"В" класса!</h1>
+        <nav>
+            <div class="burger-menu" id="burger-menu">
+                <i class="fas fa-bars"></i> <!-- Иконка бургера -->
+            </div>
+            <ul id="nav-list" class="nav-list">
+                <li><a class="nav-link" href="about.html">О классе</a></li>
+                <li><a class="nav-link" href="students.html">Ученики</a></li>
+                <li><a class="nav-link" href="gallery.html">Галерея</a></li>
+            </ul>
+        </nav>
+    </header>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const burgerMenu = document.getElementById('burger-menu');
+            const navList = document.getElementById('nav-list');
+            
+            // Переключение активности меню при клике на бургер
+            burgerMenu.addEventListener('click', function() {
+                navList.classList.toggle('active');  // Показываем/скрываем меню
+            });
+            
+            // Закрытие меню, если кликнули вне меню
+            document.addEventListener('click', function(event) {
+                if (!burgerMenu.contains(event.target) && !navList.contains(event.target)) {
+                    navList.classList.remove('active');  // Скрываем меню, если кликнули вне
+                }
+            });
+        });
+        
+    </script>
+    
+
+    <div class="diagonal-divider">
+        <!-- Содержимое секции -->
+        <section class="intro">
+            <h2>О нашем классе</h2>
+            <p>Мы — 9"В", дружный класс с массой интересных мероприятий и совместных достижений. На этом сайте вы найдете больше информации о нас, наших учениках и учителях.</p>
+            <a href="about.html"><button class="btn">Узнать больше</button></a>
+        </section>
+    </div>
+    <!-- Добавление карты и ссылки на сайт школы -->
+    <section class="school-address">
+        <h2>Адрес нашей школы</h2>
+        <div class="map-container">
+            <iframe class="iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2478.754382419247!2d45.9277662769876!3d51.59106480458752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4114c593cb3443b5%3A0x6ba46b0666ac3dfa!2z0JzQntCjINCh0J7QqCDihJYgMTAw!5e0!3m2!1sru!2sru!4v1731594018449!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <p>Вы можете посетить сайт нашей школы, чтобы узнать больше: <a href="https://school100sar.gosuslugi.ru/" target="_blank">Сайт школы</a></p>
+    </section>
+
+    
+    <footer>
+        <p>&copy; 2024 9"В" класс. Все права защищены. Создал Наконечный Матвей / для урока информатики</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ждем полной загрузки контента
+            window.addEventListener('load', function() {
+                document.getElementById('loading-spinner').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+                document.body.style.overflow = 'auto'; // Включаем скролл после загрузки
+            });
+        });
+    </script>
+</body>
+</html>
